@@ -9,9 +9,9 @@ const PORT = process.env.PORT || 8080
 
 let app = express();
 
-app.use(express.static(_dirname + "public"));
+app.use(express.static(__dirname + "public"));
 
-app.use(epxress.urlencoded({ extended: true}));
+app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
 let exHandle = require("express-handlebars");
