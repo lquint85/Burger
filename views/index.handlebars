@@ -1,0 +1,34 @@
+<div class="container">
+    <h1> BURGER BURGER BURGER</h1>
+
+    <form id="burgerform">
+        <textarea type="text" id="burgerinput"></textarea>
+        <button type="button" id="submit"><button type="submit">Submit</button></button>
+    </form>
+
+    <section>
+        <div id="notEaten" class="container">
+            <h2>Not Eaten</h2>
+            <div>
+                {{#each burgers}}
+                {{#unless eaten}}
+                {{>burgers/buger-block eaten=false}}
+                {{/unless}}
+                {{/each}}
+            </div>
+        </div>
+    </section>
+    <div id="eaten" class="container">
+        <h2>Eaten</h2>
+        <div>
+            {{#eaten burgers}}
+            {{#if eaten}}
+            {{> burgers/burger-block eaten=true}}
+            {{/if}}
+            {{/each}}
+        </div>
+    </div>
+    </section>
+
+
+</div>
