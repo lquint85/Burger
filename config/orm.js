@@ -1,6 +1,7 @@
-let connection = require(".connection");
+const connection = require("../config/connection");
 
-let orm = {
+const orm = {
+    // The last variable cb represents the anonymous function being passed from server.js
         selectAll: function (table, modelCb) {
             let queryString = 'SELECT * FROM ${table};';
             connection.query(queryString, function (err, results) {
