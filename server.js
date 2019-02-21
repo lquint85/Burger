@@ -1,29 +1,88 @@
-// *****************************************************************************
-// Server.js - This file is the initial starting point for the Node/Express server.
-//
-// ******************************************************************************
-// *** Dependencies
+
 // =============================================================
+//* Dependencies
+//* =============================================================
 const express = require("express");
-const PORT = process.env.PORT || 8080
+const exphbs = require("express-handlebars");
+// const mysql = require("mysql");
 
-let app = express();
 
-app.use(express.static(__dirname + "public"));
+//* Sets up the Express App
+//* =============================================================
+const app = express();
+const PORT = process.env.PORT || 8000;
 
-app.use(express.urlencoded({extended: true}));
+
+//* Sets up the Express app to handle data parsing
+//* =============================================================
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static("public"));
 
-let exHandle = require("express-handlebars");
 
-app.engine("handlebars", exHandle({defaultLayout: "main" }));
+//* Sets up handlebars
+//* =============================================================
+app.engine("handlebars", exphbs({defaultLayout:"main"}));
 app.set("view engine", "handlebars");
 
-let routes = require(".controllers/burgers_controller");s
 
+//* Defining Routes
+//* =============================================================
+const routes = require("./controllers//burgers_controller")
 app.use(routes);
 
-app.listen(PORT, function () {
-    console.log("Listening on at localhost:" + PORT);
-})
+
+//* Starts the server to begin listening
+//* =============================================================
+  app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const express = require("express");
+// const PORT = process.env.PORT || 8080
+
+// let app = express();
+
+// app.use(express.static(__dirname + "public"));
+
+// app.use(express.urlencoded({extended: true}));
+// app.use(express.json());
+
+// let exHandle = require("express-handlebars");
+
+// app.engine("handlebars", exHandle({defaultLayout: "main" }));
+// app.set("view engine", "handlebars");
+
+// let routes = require(".controllers/burgers_controller");s
+
+// app.use(routes);
+
+// app.listen(PORT, function () {
+//     console.log("Listening on at localhost:" + PORT);
+// })
 
