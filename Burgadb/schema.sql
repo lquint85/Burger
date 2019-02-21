@@ -1,4 +1,4 @@
---DROP DATABASE IF EXISTS burgers_db;
+DROP DATABASE IF EXISTS burgers_db;
 
 CREATE DATABASE burgers_db;
 
@@ -9,4 +9,6 @@ CREATE TABLE burgers (
     burger_name VARCHAR(255) NOT NULL,
     eaten BOOLEAN default 0,
     primary key(id)
-)
+);
+
+SELECT * FROM burgers;
