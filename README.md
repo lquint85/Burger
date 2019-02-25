@@ -6,7 +6,7 @@ Eat-Da-Burger! is a restaurant app that lets users input the names of burgers th
 
  # Heroku
 
- https://git.heroku.com/luis-burger.git
+ https://luis-burger.herokuapp.com/
 
 
 # Technologies Used
