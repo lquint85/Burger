@@ -16,7 +16,7 @@ $(#burgerform).on("submit", function (event) {
     )
 });
 
-$("#eatenbtn").on("click", function (event) {
+$("#devour").on("click", function (event) {
     event.preventDefault();
     console.log("clicked");
     let id = $(this).data("id");
