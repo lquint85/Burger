@@ -15,6 +15,7 @@ insertOne: function (values, controllerCb) {
     },
     updateOne: function(devoured, condition, controllerCb) {
         console.log('devoured', parseInt(devoured) === 1);
+
         orm.updateOne("burgers", parseInt(devoured) === 1, condition, function(
             res
         ) {
