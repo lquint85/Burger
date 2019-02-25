@@ -18,26 +18,25 @@ const orm = {
             
             let valString = `${values}`;
             
-            let queryString = `INSERT INTO ${table} (burger_name, devoured) VALUES (${valString}, false)`;
-            console.log(queryString);
-            connection.query(queryString, function (err, results) {
+            let queryString = 'INSERT INTO ' + table + '(burger_name) VALUES (?)';
+            connection.query(queryString, valString, function (err, results) {
                 if (err) {
                     throw (err);
-                };
+                }
                 modelCb(results);
 
-            })
+            });
         },
 
         updateOne: function (table, values, condition, modelCb) {
-            let queryString = `UPDATE ${table} SET eaten = ${values} WHERE ${condition};`
-            connection.query(queryString, function(err, results) {
+            let queryString = `UPDATE ${table} SET devoured = ? WHERE id =?;`;
+            connection.query(queryString, [values, condition], function(err, results) {
                 if (err) {
                     throw err;
             
-                };
+                }
                 modelCb(results);
-            })
+            });
         }
     };
     module.exports = orm;
