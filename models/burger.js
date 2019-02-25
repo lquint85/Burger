@@ -13,9 +13,11 @@ insertOne: function (values, controllerCb) {
         controllerCb(res);
         });
     },
-    updateOne: function(condition, controllerCb) {
-        console.log(condition);
-        orm.updateOne("burgers", true, condition, function(res) {
+    updateOne: function(devoured, condition, controllerCb) {
+        console.log('devoured', parseInt(devoured) === 1);
+        orm.updateOne("burgers", parseInt(devoured) === 1, condition, function(
+            res
+        ) {
             controlllerCb(res);
         });
     }
