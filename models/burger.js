@@ -19,7 +19,7 @@ insertOne: function (values, controllerCb) {
         orm.updateOne("burgers", parseInt(devoured) === 1, condition, function(
             res
         ) {
-            controlllerCb(res);
+            controllerCb(res);
         });
     }
 };
